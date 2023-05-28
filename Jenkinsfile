@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        ant 'antInstaller'
+    }
+
     stages {
         stage('Build') {
             steps {
