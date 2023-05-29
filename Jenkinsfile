@@ -15,7 +15,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                // Testing steps would go here
+                echo 'Running Application'
+                sh 'java -classpath bin sieveOfErast.sieveApp 10'
             }
         }
     }
