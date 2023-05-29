@@ -3,6 +3,7 @@ pipeline {
 
     tools {
         ant 'antInstaller'
+        jdk 'jdk18'
     }
 
     stages {
