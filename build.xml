@@ -3,11 +3,12 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="sieveOfErast">
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="sieveOfErast">
     <property environment="env"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="18"/>
-    <property name="source" value="18"/>
+    <property name="target" value="17"/>
+    <property name="source" value="17"/>
 
     <path id="sieveOfErast.classpath">
         <pathelement location="bin"/>
@@ -35,6 +36,10 @@
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
             <classpath refid="sieveOfErast.classpath"/>
+            <compilerarg value="-source"/>
+            <compilerarg value="17"/>
+            <compilerarg value="-target"/>
+            <compilerarg value="17"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
