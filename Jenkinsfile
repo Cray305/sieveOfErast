@@ -1,10 +1,8 @@
 pipeline {
     agent any
-
     tools {
-        ant 'antInstaller'
+        jdk 'Java 18'
     }
-
     stages {
         stage('Build') {
             steps {
@@ -12,10 +10,15 @@ pipeline {
                 sh 'ant -buildfile build.xml'
             }
         }
+        stage('Check Java Version') {
+            steps {
+                echo 'Checking Java version..'
+                sh 'java -version'
+            }
+        }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                echo 'Running Application'
                 sh 'java -classpath bin sieveOfErast.sieveApp 10'
             }
         }
