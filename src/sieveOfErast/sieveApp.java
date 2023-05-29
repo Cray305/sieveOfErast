@@ -6,7 +6,7 @@ public class sieveApp {
 
     public static void main(String[] args) {
         if (args.length == 0) {
-            System.out.println("Please provide the maximum integer to check for prime numbers as a command-line argument");
+            System.out.println("Please provide the maximum integer to check for prime numbers as a command-line argument.");
             return;
         }
         
