@@ -31,7 +31,7 @@ public class sieveApp {
                 System.out.print(i + " ");
             }
         }
-        //making a small change to test if the 
+        //making a small change to test if
 		
 		
 	}
