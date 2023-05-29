@@ -1,16 +1,17 @@
 package sieveOfErast;
+
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class sieveApp {
 
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the maximum integer to check for prime numbers: ");
-        int n = scanner.nextInt();
+    public static void main(String[] args) {
+        if (args.length == 0) {
+            System.out.println("Please provide the maximum integer to check for prime numbers as a command-line argument.");
+            return;
+        }
         
+        int n = Integer.parseInt(args[0]);
         sieveOfEratosthenes(n);
-        scanner.close();
     }
 
     static void sieveOfEratosthenes(int n) {
@@ -30,9 +31,5 @@ public class sieveApp {
                 System.out.print(i + " ");
             }
         }
-        //making a small change to test
-		
-		
-	}
-
+    }
 }
